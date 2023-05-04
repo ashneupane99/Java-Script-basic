@@ -363,8 +363,10 @@ switch*/
 
 // console.log(total)
 
-// Challenge:
-// AN array of 50 random numbers range between 1 and 100 programmatically
+// 
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -=-=-=-=-=-=-=-=-=-=-==-==-CHALLENGE=-=-=-=-=-=-=-=-=-=-=-=-=-:
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// 1.AN array of 50 random numbers range between 1 and 100 programmatically
 
 // const random = []
 // const i = 1
@@ -386,25 +388,25 @@ switch*/
 // //     return 
 // //     console.log(ran)
 // }
-let arr  = []
-for(let i=0; i<50; i++){
-    const val = Math.floor(Math.random(i)*101);
-    const data = arr.push(val)
+// let arr  = []
+// for(let i=0; i<50; i++){
+//     const val = Math.floor(Math.random()*101);
+//     const data = arr.push(val)
   
-    }
-    console.log(arr)
+//     }
+//     console.log(arr)
 
-// 2. Sort array in descending order 
- const des = arr.sort(function(a,b){return b-a})
- console.log(des)
+// // 2. Sort array in descending order 
+//  const des = arr.sort(function(a,b){return b-a})
+//  console.log(des)
 
 // 3. get the total value of array
 
-const total = arr.reduce((subtotal, num)=>{
-        return subtotal + num
-    }, 0)
+// const total = arr.reduce((subtotal, num)=>{
+//         return subtotal + num
+//     }, 0)
     
-    console.log("The total value is = " + total)
+//     console.log("The total value is = " + total)
 
 //4. divide original array into odd array and even array
     // let a = 0;
@@ -423,19 +425,19 @@ const total = arr.reduce((subtotal, num)=>{
     //         })
             
     //         console.log(arr, newArg)
-    let odd = []
-    let even = []
+    // let odd = []
+    // let even = []
   
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] % 2 === 0) {
-        // number is even
-        even.push(arr[i])
-      } else {
-        // number is odd
-        odd.push(arr[i])
-      }
-    }
-    console.log("even [" + even , "] odd[ " +odd + "]" )
+    // for (let i = 0; i < arr.length; i++) {
+    //   if (arr[i] % 2 === 0) {
+    //     // number is even
+    //     even.push(arr[i])
+    //   } else {
+    //     // number is odd
+    //     odd.push(arr[i])
+    //   }
+    // }
+    // console.log("even [" + even , "] odd[ " +odd + "]" )
     
     // const dup = arr.filter((arr, i) =>{
     //    for (i<=arr.length;) {
@@ -456,7 +458,145 @@ const total = arr.reduce((subtotal, num)=>{
     //             console.log(odd , even )
 
 //5. remove the duplicate value from the original array
-const noRep = arr.filter((item, i) => arr.indexOf(item) ===i );
-console.log(arr, noRep)
+// const noRep = arr.filter((item, i) => arr.indexOf(item) ===i );
+// console.log(arr, noRep)
 
 
+// =-=-=-=-=-=-=-=-=-Object manipulation-=-=-=-=-=-=-=
+// Object ()
+// Property, assign, delete
+
+// const person= {
+//     name : "ash",
+//     add : "canberra"
+// }
+// // console.log(person.name);
+// console.log(person);
+// console.log(person["name"]);
+// const val = person.name
+// person.name = "sam"
+// person.age = 20
+// delete person.add
+
+// =-0==-=-=-destructuring=-=-=-=-
+// Default + Rest + Spread
+
+// const parentInfo = ({f,m}) => {
+//     return ` And the person is the child of ${f} and ${m}`
+// }
+
+// const bio = ({name, title = "sir", add, ...rest})=> {
+
+
+//     // const {name, add} = person;
+//     // both codes below return same value 
+//     // return `hi there my name si ${person.name} and in live in ${person.add}`
+//     // here title is passed as default as well so in sam bio title is not passed so title in sam will be given as default which is sir.
+//     return `hi there my name is ${title}. ${name} and in live in ${add}` + parentInfo(rest)
+// }
+// const obj = {
+//         name : "ash",
+//         add : "canberra",
+//         title: "mr",
+//         age: 20,
+//         f: "harry",
+//         m: "merry"
+//     }
+// const ashBio = bio(obj)
+// console.log(ashBio)
+
+// const samBio = bio({
+//     name : "sam",
+//     add : "canberra",
+ 
+//     age: 20
+// })
+// console.log(samBio)
+
+
+// using spread in destructuring
+
+// const person = {
+//     name:"ash",
+//     num : 90898980
+// }
+
+// const prof = {
+//     title : "sof.eng",
+//     loc: "canberra"
+// }
+
+// const combo = {...person, ...prof}
+// how to differentiate rest and spread:
+// {...rest} = {...spread}
+// to convert object into array 
+// const proArr = Object.keys(combo)//this gives the properties stored in object
+// const proArr = Object.values(combo)//this gives the values of properties inside object
+// for (let key in combo) {
+//     console.log(key + " = " + combo[key])
+// }
+
+// console.log(combo, proArr)
+
+// -=-=-=-=-=-Date object-=-=-=-=-=-=-
+// getMethod and setMethod
+//getMethod
+// const dt = Date.now()
+// const dt =new Date("2012-02-18") // here new will refer to the value inside " ". if no new is passed, date will return the current date and time
+// // const val = dt.getDay()
+// // const val = dt.getDate()
+// // const val = dt.toLocaleDateString()
+// // const val = dt.toLocaleTimeString()
+// console.log(dt)
+// // setMethod
+// dt.setDate(dt.getDate() + 7)
+
+// console.log(dt)
+
+// =-=-=-=-=-=-challenge-=[-=-=-=-===-=-=-=]
+
+// create a function that takes food name nad expiry date and returns like " xyz food is expired" or "not expired" and console log
+
+// const checkExpiry = ({ name, expiry }) => {
+//     const today = Date.now();
+//     const productDt = new Date(expiry).getTime();
+// console.log(today, productDt);
+// if (today > productDt){
+//     const oneDay = 24*60*60*1000;
+//     const days = Math.floor ((today - productDt) / oneDay)
+//     return ` ${name} has expired ${days} days ago`
+// } else {
+//     return `${name} has not expired`
+// }
+// }
+// const product1 = {
+//     name: "fish",
+//     expiry: "2023-05-01"
+// }
+// const product2 = {
+//     name: "tuna",
+//     expiry: "2023-05-16"
+// }
+// console.log(checkExpiry(product1))
+// console.log(checkExpiry(product2))
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// Call stack 
+// let i = 0
+// console.log( "1. console log")
+// setTimeout (()=> {
+//     console.log ("2. inside 2nd set time out")
+// }, 1000)
+// const sayHey = () => {
+//     console.log("3. hey")
+//     const a  = 5
+//     const total = a**2 
+
+//     return total
+// }
+// console.log("4. console")
+// setTimeout (()=> {
+//     console.log ("5. inside 5th set time out")
+// }, 0)
+// const ans = sayHey()
+// console.log("6. console", ans)
